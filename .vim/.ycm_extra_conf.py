@@ -1,5 +1,7 @@
 # This file was copied from https://github.com/JDevlieghere/dotfiles
 # I may make changes here, but most or all of it is from JDevlieghere
+# NOTE To be effective with YCM and CMake, use set(CMAKE_EXPORT_COMPILE_COMMANDS 1) in your CMakeLists.txt to generate the json
+#       compile commands database, then YCM will accurately represent your compilation
 
 import os
 import os.path
