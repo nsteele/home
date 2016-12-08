@@ -1,3 +1,6 @@
+# This file was copied from https://github.com/JDevlieghere/dotfiles
+# I may make changes here, but most or all of it is from JDevlieghere
+
 import os
 import os.path
 import fnmatch
