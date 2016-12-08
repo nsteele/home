@@ -32,20 +32,16 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 imap jj <Esc>
 
 "key-mapping to regenerate a tags file in local directory
-nmap ,t :!(cd %:p:h && ctags --languages=c,c++ --c-kinds=+p --c++-kinds=+p --fields=+iaS --extra=+q -o .tags *)&
+nmap ,t :!(cd %:p:h && ~/.ctags/dirtags.bash)&
 set tags=./.tags,.tags
 
 set number
 
-"SimpylFold options
-let g:SimpylFold_docstring_preview=1
 "YCM options
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>f :YcmCompleter FixIt<CR>
-set foldmethod=indent
-set foldlevel=99
 
 "options for *.py scripts
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix encoding=utf-8

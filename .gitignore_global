@@ -1,0 +1,8 @@
+# my default tag file name
+.tags
+
+
+# local user settings
+# 	vim
+.vimrc.local
+.ycm_extra_conf.py 
