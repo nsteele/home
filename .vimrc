@@ -10,7 +10,7 @@ call vundle#begin()
 " Vundle plugins
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe' "requires additional installation steps. See Valloric/YouCompleteMe on GitHub. Also requires a .ycm_extra_conf.py file for C language completion. Specific .ycm_extra_conf.py files can be used for specific contexts, like ROS dev.
+Plugin 'Valloric/YouCompleteMe' "requires additional installation steps. See Valloric/YouCompleteMe on GitHub. Also requires a .ycm    _extra_conf.py file for C language completion. Specific .ycm_extra_conf.py files can be used for specific contexts, like ROS dev.
 Plugin 'scrooloose/syntastic'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
@@ -42,19 +42,14 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <leader>f :YcmCompleter FixIt<CR>
+let g:ycm_semantic_triggers = {
+\   'roslaunch' : ['="', '$(', '/'],
+\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
+\ }
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
 
 "options for *.py scripts
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix encoding=utf-8
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 "Syntastic options
 "set statusline+=%#warningmsg#
@@ -74,11 +69,6 @@ let g:syntastic_check_on_wq = 0
 "nnoremap <silent> <leader>gl :Glog<CR>
 "nnoremap <silent> <leader>gp :Git push<CR>
 
-let g:ycm_semantic_triggers = {
-\   'roslaunch' : ['="', '$(', '/'],
-\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
-\ }
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
 
 if filereadable(glob("./.vimrc.local"))
 	source ./.vimrc.local
