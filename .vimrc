@@ -12,7 +12,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe' "requires additional installation steps. See Valloric/YouCompleteMe on GitHub. Also requires a .ycm_extra_conf.py file for C language completion. Specific .ycm_extra_conf.py files can be used for specific contexts, like ROS dev.
 Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
@@ -65,14 +64,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-"nnoremap <silent> <leader>gs :Gstatus<CR>
-"nnoremap <silent> <leader>ga :Gwrite<CR><CR>
-"nnoremap <silent> <leader>gt :Gcommit -v -q %:p<CR>
-"nnoremap <silent> <leader>gd :Gdiff<CR>
-"nnoremap <silent> <leader>gc :Gcommit -v -q<CR>
-"nnoremap <silent> <leader>gb :Gblame<CR>
-"nnoremap <silent> <leader>gl :Glog<CR>
-"nnoremap <silent> <leader>gp :Git push<CR>
+"NERDTree settings
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
