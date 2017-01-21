@@ -1,6 +1,5 @@
 #address issue with osx ctags installed via homebrew
 alias ctags=$(which ctags)
-
 # .bash_profile
 
 # If .bash_profile exists, bash doesn't read .profile
