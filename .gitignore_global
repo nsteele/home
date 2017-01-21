@@ -4,5 +4,6 @@
 
 # local user settings
 # 	vim
+*.*.swp
 .vimrc.local
 .ycm_extra_conf.py 
