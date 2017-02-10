@@ -5,7 +5,10 @@ In your `$HOME` directory, run
 ```
 git init
 git add remote origin <clone url>
-git pull origin master
+git fetch
+git checkout -b master origin/master
+git branch --set-upstream-to=origin/master master
+git pull
 git submodule init
 git submodule update --recursive
 ```
