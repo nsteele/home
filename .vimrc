@@ -40,7 +40,7 @@ set number
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>f :YcmCompleter FixIt<CR>
+"map <leader>f :YcmCompleter FixIt<CR>
 let g:ycm_semantic_triggers = {
 \   'roslaunch' : ['="', '$(', '/'],
 \   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
@@ -58,6 +58,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = []
 
 "NERDTree settings
 autocmd StdinReadPre * let s:std_in=1
