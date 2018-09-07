@@ -15,11 +15,9 @@ git submodule update --recursive
 
 the submodule(s) are necessary, else you will be missing `Vundle` and `vi` will throw errors.
 
-## Setup
+## Install `vim`
 
-To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
-`YouCompleteMe` requires additional installation; see [here](https://github.com/Valloric/YouCompleteMe). Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
-
+Install `vim` according to one of the OS-specific instruction sets below. Then see section "Install `vim` plugins"
 
 ### macOS
 
@@ -30,6 +28,14 @@ brew install vim --with-override-system-vi
 ```
 
 then restart your terminal. Running `vi --version` should show an updated `vim`. You can check that you have the latest available from Homebrew by referencing the version shown by `brew info vim`.
+
+### Ubuntu 16.04
+
+Use a `vim` installation with python support. My preferred is
+
+```
+sudo apt-get install vim-gtk-py2
+```
 
 ### Ubuntu 14.04
 
@@ -74,6 +80,10 @@ In the case you wish to uninstall `vim`, run
  dpkg -r vim
  ```
 
+## Install `vim` plugins
+
+To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
+`YouCompleteMe` requires additional installation; see the section on semantic support for C-family languages [here](https://github.com/Valloric/YouCompleteMe). Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
 
 ## Tips
 
