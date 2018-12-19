@@ -4,13 +4,12 @@ In your `$HOME` directory, run
 
 ```
 git init
-git add remote origin <clone url>
+git remote add origin <clone url>
 git fetch
 git checkout -b master origin/master
 git branch --set-upstream-to=origin/master master
 git pull
-git submodule init
-git submodule update --recursive
+git submodule update --init --recursive
 ```
 
 the submodule(s) are necessary, else you will be missing `Vundle` and `vi` will throw errors.
@@ -83,7 +82,11 @@ In the case you wish to uninstall `vim`, run
 ## Install `vim` plugins
 
 To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
-`YouCompleteMe` requires additional installation; see the section on semantic support for C-family languages [here](https://github.com/Valloric/YouCompleteMe). Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
+`YouCompleteMe` requires additional installation; see the section on semantic support for C-family languages for your OS:
+* [macOS](https://github.com/Valloric/YouCompleteMe#mac-os-x)
+* [Linux 64-bit](https://github.com/Valloric/YouCompleteMe#linux-64-bit)
+
+Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
 
 ## Tips
 
