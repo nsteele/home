@@ -7,8 +7,6 @@ git init
 git remote add origin <clone url>
 git fetch
 git checkout -b master origin/master
-git branch --set-upstream-to=origin/master master
-git pull
 git submodule update --init --recursive
 ```
 
