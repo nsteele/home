@@ -34,6 +34,7 @@ Use a `vim` installation with python support. My preferred is
 sudo apt-get install vim-gnome-py2
 sudo update-alternatives --config vim # Opens window where you can specify the python 2 or 3 version of vim as default
 sudo update-alternatives --config vi  # Opens window where you can specify the python 2 or 3 version of vim as default
+sudo update-alternatives --config editor  # Opens window where you can specify the python 2 or 3 version of vim as default
 ```
 
 ### Ubuntu 14.04
