@@ -37,6 +37,8 @@ sudo update-alternatives --config vi  # Opens window where you can specify the p
 sudo update-alternatives --config editor  # Opens window where you can specify the python 2 or 3 version of vim as default
 ```
 
+Note that the `vim-ros` plugin requires `python` 2, but YouCompleteMe on Ubuntu 16.04 gives an error on opening `vim` when using `python` 2. For non-ROS developers, use `vim` with `python` 3 and disable `vim-ros` in your `.vimrc`. For ROS developers, a work around is TBD.
+
 ### Ubuntu 14.04
 
 For `vi` on Ubuntu 14.04 x86_64, here are the steps I used to install:
@@ -83,9 +85,9 @@ In the case you wish to uninstall `vim`, run
 ## Install `vim` plugins
 
 To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
-`YouCompleteMe` requires additional installation; see the section on semantic support for C-family languages for your OS:
-* [macOS](https://github.com/Valloric/YouCompleteMe#mac-os-x)
-* [Linux 64-bit](https://github.com/Valloric/YouCompleteMe#linux-64-bit)
+
+`YouCompleteMe` (YCM)requires additional installation; see the [full installation guide](https://github.com/Valloric/YouCompleteMe/blob/master/README.md#full-installation-guide). One recommendation given in the YCM install guide is to ensure your `libclang` version is `7` or newer. For Linux, I recommend using LLVM's PPA for obtaining newer `libclang` versions. See [this site](https://apt.llvm.org/) for details. Installing from the PPA e.g. ```sudo apt install libclang-dev```
+will put your `llvm` root directory under `/usr/lib`; for example, if the latest `llvm` is version 8, your `llvm` root directory is `/usr/lib/llvm-8`. 
 
 Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
 
