@@ -18,7 +18,10 @@ Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rdnetto/YCM-Generator'
-Plugin 'taketwo/vim-ros'
+
+"taketwo/vim-ros plugin requires python2, but YCM requires python3, so we are
+"disabling vim-ros
+"Plugin 'taketwo/vim-ros'
 
 call vundle#end() "required
 filetype plugin indent on "required
@@ -38,6 +41,7 @@ set tags=./.tags,.tags
 set number
 
 "YCM options
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -47,6 +51,8 @@ let g:ycm_semantic_triggers = {
 \   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
 \ }
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 
 "options for *.py scripts
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix encoding=utf-8

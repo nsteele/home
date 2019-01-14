@@ -31,13 +31,11 @@ then restart your terminal. Running `vi --version` should show an updated `vim`.
 Use a `vim` installation with python support. My preferred is
 
 ```
-sudo apt-get install vim-gnome-py2
-sudo update-alternatives --config vim # Opens window where you can specify the python 2 or 3 version of vim as default
-sudo update-alternatives --config vi  # Opens window where you can specify the python 2 or 3 version of vim as default
-sudo update-alternatives --config editor  # Opens window where you can specify the python 2 or 3 version of vim as default
+sudo apt-get install vim-gnome
+sudo update-alternatives --config vim # Opens window where you can specify default vim
+sudo update-alternatives --config vi  # Opens window where you can specify default vi as vim
+sudo update-alternatives --config editor  # Opens window where you can specify vim as default editor
 ```
-
-Note that the `vim-ros` plugin requires `python` 2, but YouCompleteMe on Ubuntu 16.04 gives an error on opening `vim` when using `python` 2. For non-ROS developers, use `vim` with `python` 3 and disable `vim-ros` in your `.vimrc`. For ROS developers, a work around is TBD.
 
 ### Ubuntu 14.04
 
@@ -86,10 +84,7 @@ In the case you wish to uninstall `vim`, run
 
 To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
 
-`YouCompleteMe` (YCM)requires additional installation; see the [full installation guide](https://github.com/Valloric/YouCompleteMe/blob/master/README.md#full-installation-guide). One recommendation given in the YCM install guide is to ensure your `libclang` version is `7` or newer. For Linux, I recommend using LLVM's PPA for obtaining newer `libclang` versions. See [this site](https://apt.llvm.org/) for details. Installing from the PPA e.g. ```sudo apt install libclang-dev```
-will put your `llvm` root directory under `/usr/lib`; for example, if the latest `llvm` is version 8, your `llvm` root directory is `/usr/lib/llvm-8`. 
-
-Note the minimum required `vim` version, and how to install a newer `vim`, in the preceding link.
+`YouCompleteMe` (YCM)requires additional installation; see the [installation guide](https://github.com/Valloric/YouCompleteMe/blob/master/README.md#installation).  Note the minimum required `vim` version, and how to install a newer `vim`in the preceding section of this document (YCM also has `vim` installation instructions for various OS's, but I prefer the instructions I've listed in this document).
 
 ## Tips
 
