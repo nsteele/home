@@ -26,7 +26,7 @@ brew install vim --with-override-system-vi
 
 then restart your terminal. Running `vi --version` should show an updated `vim`. You can check that you have the latest available from Homebrew by referencing the version shown by `brew info vim`.
 
-### Ubuntu 16.04
+### Ubuntu 16.04 and newer
 
 Use a `vim` installation with python support. My preferred is
 

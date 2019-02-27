@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/nicholas/nea_src/aacus/src/sensing/bbb_esc/src/esc'
-let g:netrw_dirhist_2='/home/nicholas/nea_src/aacus/src/sensing/bbb_esc/src/timing_capture'
-let g:netrw_dirhist_3='/home/nicholas/nea_src/aacus/src/sensing/lldm/src/loke_laser_distance_meter2'
-let g:netrw_dirhist_4='/home/nicholas/nea_src/boost/src/motion_processor/firmware/TimeServerST'
-let g:netrw_dirhist_5='/home/nicholas/nea_src/boost/src/motion_processor/firmware/TimeServerST/CubeMxFiles'
-let g:netrw_dirhist_6='/home/nicholas/nea_src/boost/src/motion_processor/firmware/TimeServerST/CubeMxFiles/TrueSTUDIO'
-let g:netrw_dirhist_7='/home/nicholas/nea_src/boost/src/motion_processor/firmware/TimeServerST/CubeMxFiles/TrueSTUDIO/time_server'

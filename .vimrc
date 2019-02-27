@@ -12,9 +12,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe' "requires additional installation steps. See Valloric/YouCompleteMe on GitHub. Also requires a .ycm_extra_conf.py file for C language completion. Specific .ycm_extra_conf.py files can be used for specific contexts, like ROS dev.
-Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
+Plugin 'nvie/vim-flake8' "syntax checking for python
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rdnetto/YCM-Generator'
