@@ -10,7 +10,7 @@ git checkout -b master origin/master
 git submodule update --init --recursive
 ```
 
-the submodule(s) are necessary, else you will be missing `Vundle` and `vi` will throw errors.
+the submodule(s) are necessary, else you will be missing `.tmux.conf` and `tmux` will not work.
 
 ## Install `vim`
 
@@ -90,15 +90,8 @@ dpkg -r vim
 
 # Install Dependencies
 
-Install [fzf](https://github.com/junegunn/fzf).
-Install [silver searcher](https://github.com/ggreer/the_silver_searcher). (Other find apps could be used instead, like ripgrep or fd)
-
-
-## Install `vim` plugins
-
-To install `Vundle`-managed plugins, open `vi`, then run `:PluginInstall`.
-
-`YouCompleteMe` (YCM)requires additional installation; see the [installation guide](https://github.com/Valloric/YouCompleteMe/blob/master/README.md#installation).  Note the minimum required `vim` version, and how to install a newer `vim`in the preceding section of this document (YCM also has `vim` installation instructions for various OS's, but I prefer the instructions I've listed in this document).
+* Install [fzf](https://github.com/junegunn/fzf).
+* Install [silver searcher](https://github.com/ggreer/the_silver_searcher). (Other find apps could be used instead, like ripgrep or fd)
 
 ## Tips
 
