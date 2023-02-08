@@ -7,3 +7,4 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
