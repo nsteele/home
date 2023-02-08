@@ -18,11 +18,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer'}
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8' "syntax checking for python
 Plug 'scrooloose/nerdtree'
-"Plug 'kien/ctrlp.vim'
-"Plug 'rdnetto/YCM-Generator'
-"taketwo/vim-ros plugin requires python2, but YCM requires python3, so we are
-"disabling vim-ros
-"Plug 'taketwo/vim-ros'
 
 "Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -40,9 +35,9 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 
 "Faster grepping
 if executable('rg')
-	set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow\ --multiline-dotall
+	set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --multiline-dotall
 elseif executable('ag')
-	set grepprg=ag\ --vimgrep\ --smart-case\ --hidden\ --follow
+	set grepprg=ag\ --vimgrep\ --smart-case\ --hidden
 endif
 
 "YCM options
@@ -55,14 +50,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 
-"Fuzzy search shortcut
+"FZF file search shortcut
 map <leader>p :Files<CR>
-
-" ROS dev specific helpers
-"let g:ycm_semantic_triggers = {
-"\   'roslaunch' : ['="', '$(', '/'],
-"\   'rosmsg,rossrv,rosaction' : ['re!^', '/'],
-"\ }
 
 "options for *.py scripts
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix encoding=utf-8
