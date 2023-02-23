@@ -26,6 +26,9 @@ call plug#end()
 "   filetype indent off   " Disable file-type-specific indentation
 "   syntax off            " Disable syntax highlighting
 
+" Highlight unnecessary whitespace in c and cpp files
+let c_space_errors = 1
+
 imap jj <Esc>
 nnoremap <SPACE> <Nop>
 let mapleader = " "
