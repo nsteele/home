@@ -18,6 +18,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer'}
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8' "syntax checking for python
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 
 "Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
