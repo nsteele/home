@@ -30,7 +30,7 @@ call plug#end() " - Automatically executes `filetype plugin indent on` and `synt
 "   syntax off            " Disable syntax highlighting
 
 
-"""" Basic Behavior
+""" Basic Behavior
 
 set number                     " show line numbers
 set wrap                       " wrap lines
@@ -44,7 +44,7 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 let c_space_errors = 1         " Highlight unnecessary whitespace in c and cpp files
 
 
-"""" Key Bindings
+""" Key Bindings
 
 " move vertically by visual line (don't skip wrapped lines)
 nmap j gj
@@ -72,6 +72,23 @@ elseif executable('ag')
 	set grepprg=ag\ --vimgrep\ --smart-case\ --hidden
 endif
 
+
+""" Settings for yanking to/from system clipboard and tmux clipboard
+
+" copy to attached terminal using the yank(1) script:
+" https://github.com/sunaku/home/blob/master/bin/yank
+function! Yank(text) abort
+	let escape = system('yank', a:text)
+	if v:shell_error
+		echoerr escape
+	else
+		call writefile([escape], '/dev/tty', 'b')
+	endif
+endfunction
+if executable('yank')
+	noremap <silent> <Leader>y y:<C-U>call Yank(@0)<CR>
+endif
+
 """ YouCompleteMe Plugin Configuration
 
 let g:ycm_server_python_interpreter = '/usr/bin/python3'
@@ -86,10 +103,6 @@ let g:ycm_server_log_level = 'debug'
 """ Options for specific filetypes
 " Note that settings for specific file types can go in
 " ~/.vim/ftplugin/<filetype>.vim
-
-" options for *.py scripts TODO put in ftplugin/py.vim
-au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix encoding=utf-8
-
 
 """ NERDTree Plugin Configuration
 autocmd StdinReadPre * let s:std_in=1
