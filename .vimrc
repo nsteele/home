@@ -111,8 +111,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-""" Read local vimrc if available.
+""" Read extra vimrc if available. This is useful for machine-specific configurations.
 
-if filereadable(glob("./.vimrc.local"))
-	source ./.vimrc.local
+if filereadable(glob("~/.vim/extra_vimrc"))
+	source ~/.vim/extra_vimrc
 endif
