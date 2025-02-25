@@ -7,7 +7,7 @@ fi
 export PATH="/usr/local/sbin:$PATH"
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export FZF_DEFAULT_COMMAND='ag -l --hidden -g ""'
+export FZF_DEFAULT_COMMAND='ag -l --hidden --ignore \.git -g ""'
 
 which difft > /dev/null
 if [ $? -eq 0 ]; then
