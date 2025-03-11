@@ -4,7 +4,7 @@ if [[ -f ~/.profile ]]; then
 	. ~/.profile
 fi
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:/opt/nvim-linux-x86_64/bin"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export FZF_DEFAULT_COMMAND='ag -l --hidden --ignore \.git -g ""'

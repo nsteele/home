@@ -12,9 +12,20 @@ git submodule update --init --recursive
 
 the submodule(s) are necessary, else you will be missing `.tmux.conf` and `tmux` will not work.
 
-## Install `vim`
+## Install `nvim`
 
-Install `vim` according to one of the OS-specific instruction sets below. Then see section "Install `vim` plugins"
+Install `nvim` according to its [installation manual on github](https://github.com/neovim/neovim/blob/master/INSTALL.md).
+For Linux, I recommend following the "Pre-built archives" section.
+Instructions for macOS and Windows are also available in the manual.
+
+# Install Dependencies
+
+* Install [fzf](https://github.com/junegunn/fzf).
+* Install [silver searcher](https://github.com/ggreer/the_silver_searcher). (Other find apps could be used instead, like ripgrep or fd)
+
+## OUTDATED Install `vim`
+
+Install `vim` according to one of the OS-specific instruction sets below.
 
 ### macOS
 
@@ -87,11 +98,6 @@ In the case you wish to uninstall `vim`, run
 ```
 dpkg -r vim
 ```
-
-# Install Dependencies
-
-* Install [fzf](https://github.com/junegunn/fzf).
-* Install [silver searcher](https://github.com/ggreer/the_silver_searcher). (Other find apps could be used instead, like ripgrep or fd)
 
 ## Tips
 

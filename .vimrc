@@ -19,11 +19,16 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer'} 
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8' "syntax checking for python
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
+if has('nvim')
+
+else
+	Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer'} 
+endif
+
 call plug#end() " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 " You can revert the settings after the call like so:
 "   filetype indent off   " Disable file-type-specific indentation
