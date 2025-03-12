@@ -23,9 +23,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8' "syntax checking for python
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-if has('nvim')
-
-else
+if !has('nvim')
 	Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clangd-completer'} 
 endif
 
@@ -63,12 +61,6 @@ let mapleader = " "
 map <leader>p :Files<CR>
 
 
-""" Vim Appearance
-
-" put colorscheme files in ~/.vim/colors/
-" colorscheme solarized      " good colorschemes: murphy, slate, molokai, badwolf, solarized
-
-
 """ Settings for faster grepping
 
 if executable('rg')
@@ -95,14 +87,15 @@ if executable('yank')
 endif
 
 """ YouCompleteMe Plugin Configuration
-
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = 'debug'
+if !has('nvim')
+	let g:ycm_server_python_interpreter = '/usr/bin/python3'
+	let g:ycm_add_preview_to_completeopt = 1
+	let g:ycm_autoclose_preview_window_after_completion=1
+	map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+	let g:ycm_server_keep_logfiles = 1
+	let g:ycm_server_log_level = 'debug'
+endif
 
 
 """ Options for specific filetypes
