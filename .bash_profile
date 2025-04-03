@@ -1,13 +1,21 @@
+NEOVIM_DIR="/opt/nvim-linux-x86_64"
+export PATH="/usr/local/sbin:$PATH:/opt/nvim-linux-x86_64/bin"
+
+if [ -d "$NEOVIM_DIR"]; then
+   export PATH = "$PATH:/opt/nvim-linux-x86_64/bin"
+else
+   echo "Neovim install directory $NEOVIM_DIR not found
+   Installation instructions: https://github.com/neovim/neovim/blob/master/INSTALL.md"
+fi
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export FZF_DEFAULT_COMMAND='rg --files --hidden -g "!{.git,node_modules}/*" 2> /dev/null'
 
 # If .bash_profile exists, bash doesn't read .profile
 if [[ -f ~/.profile ]]; then
 	. ~/.profile
 fi
-
-export PATH="/usr/local/sbin:$PATH:/opt/nvim-linux-x86_64/bin"
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export FZF_DEFAULT_COMMAND='ag -l --hidden --ignore \.git -g ""'
 
 which difft > /dev/null
 if [ $? -eq 0 ]; then

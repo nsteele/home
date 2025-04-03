@@ -20,8 +20,11 @@ Instructions for macOS and Windows are also available in the manual.
 
 # Install Dependencies
 
-* Install [fzf](https://github.com/junegunn/fzf).
-* Install [silver searcher](https://github.com/ggreer/the_silver_searcher). (Other find apps could be used instead, like ripgrep or fd)
+* Install `ripgrep`
+
+  * `sudo apt install ripgrep`
+
+* Optional: [fzf](https://github.com/junegunn/fzf) (command-line tool `fzf` - this is optional because nvim uses a standalone `fzf` plugin)
 
 ## OUTDATED Install `vim`
 
