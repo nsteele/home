@@ -12,6 +12,16 @@ return {
 				},
 				inline = {
 					adapter = "openai",
+                    keymaps = {
+                        accept_change = {
+                          modes = { n = "ga" },
+                          description = "Accept the suggested change",
+                        },
+                        reject_change = {
+                          modes = { n = "gr" },
+                          description = "Reject the suggested change",
+                        },
+                    }
 				},
 			},
 			adapters = require("plugins.local_only.custom_codecompanion_adapters"),
