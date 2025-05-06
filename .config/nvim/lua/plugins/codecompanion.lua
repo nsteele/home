@@ -8,10 +8,10 @@ return {
 		require("codecompanion").setup({
 			strategies = {
 				chat = {
-					adapter = "openai",
+					adapter = "gpt",
 				},
 				inline = {
-					adapter = "openai",
+					adapter = "claude",
                     keymaps = {
                         accept_change = {
                           modes = { n = "ga" },
