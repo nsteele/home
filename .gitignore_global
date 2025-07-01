@@ -7,3 +7,4 @@
 *.*.swp
 .vimrc.local
 .ycm_extra_conf.py 
+pyrightconfig.json
