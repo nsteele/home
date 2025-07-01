@@ -65,6 +65,12 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
   },
 })
 
+-- Highlight trailing whitespace in markdown files
+vim.cmd [[
+  highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd FileType markdown match ExtraWhitespace /\s\+$/
+]]
+
 -- Read extra init.lua if available
 local extra_init_path = vim.fn.expand('~/.config/nvim/extra_init.lua')
 if vim.fn.filereadable(extra_init_path) == 1 then

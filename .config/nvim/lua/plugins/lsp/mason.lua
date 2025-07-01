@@ -27,6 +27,7 @@ return {
         "lua_ls",
         "pyright",
         "clangd",
+        "jsonls",
       },
     })
   end,
